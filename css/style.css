@@ -226,7 +226,7 @@ main {
 
 /* Page Content */
 .page-content {
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     min-height: calc(100vh - 200px);
 }
 
@@ -259,8 +259,10 @@ main {
 
 .about-img {
     width: 100%;
+    max-width: 600px;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 .about-image .image-placeholder {
@@ -291,9 +293,10 @@ main {
 
 .service-image img {
     width: 100%;
+    max-width: 600px;
     height: auto;
     display: block;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
 }
 
 .service-image .image-placeholder {
@@ -372,15 +375,19 @@ main {
 /* Content Creation */
 .content-img {
     width: 100%;
+    max-width: 600px;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 /* Press */
 .press-img {
     width: 100%;
+    max-width: 600px;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 /* Resources Page */
@@ -647,16 +654,17 @@ footer {
         left: 0;
         right: 0;
         background-color: #ACFFAD;
-        border: 3px solid #FF0000;
+        border: 0 solid #FF0000;
         border-top: none;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: max-height 0.3s ease, border-width 0.3s ease;
         z-index: 1000;
     }
 
     .nav-wrapper.active {
         max-height: 600px;
+        border-width: 3px;
     }
 
     .nav-menu {

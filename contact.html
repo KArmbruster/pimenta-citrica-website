@@ -16,10 +16,8 @@
             <h1 class="page-title">GET IN TOUCH</h1>
 
             <div class="contact-content">
-                <p class="intro-text">IF POSSIBLE, A CONTACT FORMULAR. IF NOT, JUST A PAGE WITH MY EMAIL:</p>
-
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" action="#" method="POST">
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                         <div class="form-group">
                             <label for="name">NAME</label>
                             <input type="text" id="name" name="name" required>
@@ -27,12 +25,12 @@
 
                         <div class="form-group">
                             <label for="email">EMAIL</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="_replyto" required>
                         </div>
 
                         <div class="form-group">
                             <label for="subject">SUBJECT</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" name="_subject" required>
                         </div>
 
                         <div class="form-group">
@@ -40,13 +38,11 @@
                             <textarea id="message" name="message" rows="6" required></textarea>
                         </div>
 
+                        <!-- Honeypot for spam protection -->
+                        <input type="text" name="_gotcha" style="display:none">
+
                         <button type="submit" class="submit-btn">SEND MESSAGE</button>
                     </form>
-
-                    <div class="contact-email">
-                        <p>Or email directly at:</p>
-                        <a href="mailto:pimentacitricainfo@gmail.com" class="email-link">PIMENTACITRICAINFO@GMAIL.COM</a>
-                    </div>
                 </div>
             </div>
         </div>
