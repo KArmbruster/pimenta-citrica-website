@@ -7,16 +7,16 @@
 
 body {
     font-family: 'Arial', 'Helvetica', sans-serif;
-    background-color: #c8e6c9;
-    color: #d32f2f;
+    background-color: #ACFFAD;
+    color: #FF0000;
     line-height: 1.6;
 }
 
 /* Navigation */
 .navbar {
-    background-color: #c8e6c9;
+    background-color: #ACFFAD;
     padding: 1rem 2rem;
-    border-bottom: 3px solid #d32f2f;
+    border-bottom: 3px solid #FF0000;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -46,15 +46,15 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #d32f2f;
+    background-color: #FF0000;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #d32f2f;
+    border: 3px solid #FF0000;
 }
 
 .logo-text {
-    color: #c8e6c9;
+    color: #ACFFAD;
     font-size: 9px;
     font-weight: bold;
     text-align: center;
@@ -69,7 +69,7 @@ body {
 }
 
 .nav-menu a {
-    color: #d32f2f;
+    color: #FF0000;
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -134,13 +134,13 @@ body {
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 2rem;
-    color: #d32f2f;
+    color: #FF0000;
 }
 
 .hero-text {
     font-size: 1rem;
     margin-bottom: 2rem;
-    color: #d32f2f;
+    color: #FF0000;
 }
 
 .hero-text strong {
@@ -164,8 +164,6 @@ body {
 
 .logo-item {
     padding: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 2px solid #d32f2f;
     text-align: center;
     font-weight: bold;
     font-size: 0.8rem;
@@ -194,7 +192,7 @@ body {
     width: 100%;
     height: 500px;
     background-color: rgba(255, 255, 255, 0.3);
-    border: 3px solid #d32f2f;
+    border: 3px solid #FF0000;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -203,7 +201,7 @@ body {
 
 .photo-credit {
     font-size: 0.8rem;
-    color: #d32f2f;
+    color: #FF0000;
 }
 
 /* Page Content */
@@ -216,7 +214,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.3);
-    border: 3px solid #d32f2f;
+    border: 3px solid #FF0000;
     padding: 3rem;
 }
 
@@ -224,7 +222,7 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 2rem;
-    color: #d32f2f;
+    color: #FF0000;
 }
 
 /* About Page */
@@ -284,7 +282,7 @@ body {
 .service-card h2 {
     font-size: 1.5rem;
     margin-top: 1rem;
-    color: #d32f2f;
+    color: #FF0000;
 }
 
 /* Two Column Layout */
@@ -324,7 +322,7 @@ body {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background-color: rgba(255, 255, 255, 0.3);
-    border-left: 4px solid #d32f2f;
+    border-left: 4px solid #FF0000;
 }
 
 .testimonials cite {
@@ -385,7 +383,7 @@ body {
 .resource-item {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2rem;
-    border: 2px solid #d32f2f;
+    border: 2px solid #FF0000;
 }
 
 .resource-item h3 {
@@ -395,8 +393,8 @@ body {
 .download-btn {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background-color: #d32f2f;
-    color: #c8e6c9;
+    background-color: #FF0000;
+    color: #ACFFAD;
     text-decoration: none;
     font-weight: bold;
     transition: opacity 0.3s;
@@ -427,7 +425,7 @@ body {
 }
 
 .blog-link {
-    color: #d32f2f;
+    color: #FF0000;
     font-weight: bold;
     text-decoration: none;
 }
@@ -468,9 +466,9 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 2px solid #d32f2f;
+    border: 2px solid #FF0000;
     background-color: rgba(255, 255, 255, 0.5);
-    color: #d32f2f;
+    color: #FF0000;
     font-size: 1rem;
     font-family: inherit;
 }
@@ -483,8 +481,8 @@ body {
 
 .submit-btn {
     padding: 1rem 3rem;
-    background-color: #d32f2f;
-    color: #c8e6c9;
+    background-color: #FF0000;
+    color: #ACFFAD;
     border: none;
     font-weight: bold;
     font-size: 1rem;
@@ -500,11 +498,11 @@ body {
     text-align: center;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.3);
-    border: 2px solid #d32f2f;
+    border: 2px solid #FF0000;
 }
 
 .email-link {
-    color: #d32f2f;
+    color: #FF0000;
     font-weight: bold;
     font-size: 1.2rem;
     text-decoration: none;
@@ -516,8 +514,8 @@ body {
 
 /* Footer */
 footer {
-    background-color: #d32f2f;
-    color: #c8e6c9;
+    background-color: #FF0000;
+    color: #ACFFAD;
     text-align: center;
     padding: 1.5rem;
     margin-top: 3rem;
