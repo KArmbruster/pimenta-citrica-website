@@ -4,7 +4,10 @@
       "Bash(mkdir:*)",
       "Bash(for file in workshops.html resources.html blog.html contact.html)",
       "Bash(do sed -i 's|<div class=\"\"logo-circle\"\">|<img src=\"\"images/Logo.png\"\" alt=\"\"Pimenta Cítrica Logo\"\" class=\"\"logo-image\"\">|' \"$file\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
