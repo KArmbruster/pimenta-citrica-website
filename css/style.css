@@ -129,6 +129,50 @@ main {
     justify-content: space-between;
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    margin-left: 0.3rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ACFFAD;
+    border: 2px solid #FF0000;
+    list-style: none;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    z-index: 1001;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #FF0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 /* Hero Section (Homepage) */
 .hero-section {
     padding: 3rem 2rem;
@@ -220,8 +264,13 @@ main {
 }
 
 .photo-credit {
-    font-size: 0.8rem;
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+    font-size: 0.7rem;
     color: #FF0000;
+    padding: 4px 8px;
+    border-radius: 3px;
 }
 
 /* Page Content */
@@ -255,6 +304,10 @@ main {
 .about-text p {
     font-size: 1rem;
     line-height: 1.8;
+}
+
+.about-image {
+    position: relative;
 }
 
 .about-img {
@@ -343,11 +396,23 @@ main {
 }
 
 /* Testimonials */
+.testimonials {
+    padding-top: 0;
+}
+
+.testimonials h3 {
+    margin-top: 0;
+}
+
 .testimonials blockquote {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background-color: rgba(255, 255, 255, 0.3);
     border-left: 4px solid #FF0000;
+}
+
+.testimonials blockquote:first-of-type {
+    margin-top: 0;
 }
 
 .testimonials cite {
@@ -375,7 +440,7 @@ main {
 /* Content Creation */
 .content-img {
     width: 100%;
-    max-width: 600px;
+    max-height: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -444,6 +509,43 @@ main {
     height: 400px;
 }
 
+.press-image-container {
+    position: relative;
+}
+
+.press-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.press-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.press-list a {
+    color: #FF0000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    flex: 1;
+}
+
+.press-list a:hover {
+    opacity: 0.7;
+}
+
+.language-flag {
+    height: 1rem;
+    width: auto;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
 .press-links {
     margin-top: 2rem;
 }
@@ -465,6 +567,35 @@ main {
 
 .blog-posts {
     margin-top: 3rem;
+}
+
+/* Articles & Stories Page */
+.article-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0 2rem 0;
+}
+
+.article-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.article-list a {
+    color: #FF0000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.article-list a:hover {
+    opacity: 0.7;
+}
+
+.story-tag {
+    font-size: 0.85rem;
+    font-weight: normal;
+    opacity: 0.8;
 }
 
 /* Contact Page */
@@ -663,7 +794,7 @@ footer {
     }
 
     .nav-wrapper.active {
-        max-height: 600px;
+        max-height: 800px;
         border-width: 3px;
     }
 
@@ -688,6 +819,29 @@ footer {
         display: block;
         padding: 1rem;
         width: 100%;
+    }
+
+    /* Mobile dropdown - always visible and indented */
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .dropdown-menu {
+        display: block;
+        position: static;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+    }
+
+    .dropdown-menu a {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+        background-color: rgba(255, 0, 0, 0.05);
     }
 
     .social-icons {
