@@ -816,7 +816,9 @@ body.black-text-mode .nav-menu a,
 body.black-text-mode .press-list a,
 body.black-text-mode .article-list a,
 body.black-text-mode .blog-link,
-body.black-text-mode .email-link {
+body.black-text-mode .email-link,
+body.black-text-mode .about-text-container a,
+body.black-text-mode .content-text-container a {
     color: #000000;
 }
 
@@ -824,7 +826,9 @@ body.black-text-mode .nav-menu a:hover,
 body.black-text-mode .nav-menu a.active,
 body.black-text-mode .press-list a:hover,
 body.black-text-mode .article-list a:hover,
-body.black-text-mode .blog-link:hover {
+body.black-text-mode .blog-link:hover,
+body.black-text-mode .about-text-container a:hover,
+body.black-text-mode .content-text-container a:hover {
     color: #333333;
 }
 
