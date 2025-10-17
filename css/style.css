@@ -299,27 +299,34 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    align-items: start;
 }
 
-.about-text p {
+.about-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text-container .page-title {
+    margin-bottom: 2rem;
+}
+
+.about-text-container p {
     font-size: 1rem;
     line-height: 1.8;
 }
 
-.about-image {
+.about-image-container {
     position: relative;
 }
 
 .about-img {
     width: 100%;
-    max-width: 600px;
+    max-height: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
-}
-
-.about-image .image-placeholder {
-    height: 600px;
+    object-fit: contain;
 }
 
 /* Work With Me - Services Grid */
@@ -438,21 +445,73 @@ main {
 }
 
 /* Content Creation */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.content-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-text-container .page-title {
+    margin-bottom: 2rem;
+}
+
+.content-text-container p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.content-image-container {
+    position: relative;
+}
+
 .content-img {
     width: 100%;
     max-height: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
 }
 
 /* Press */
+.press-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.press-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.press-text-container .page-title {
+    margin-bottom: 2rem;
+}
+
+.press-text-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.press-image-container {
+    position: relative;
+}
+
 .press-img {
     width: 100%;
-    max-width: 600px;
+    max-height: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
 }
 
 /* Resources Page */
@@ -743,8 +802,11 @@ footer {
         gap: 2rem;
     }
 
-    .about-layout {
+    .about-layout,
+    .content-layout,
+    .press-layout {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .services-grid {
