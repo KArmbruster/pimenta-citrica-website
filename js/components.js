@@ -58,7 +58,46 @@ function initMobileMenu() {
     }
 }
 
+// Load accessibility toggle component
+async function loadAccessibilityToggle() {
+    try {
+        const response = await fetch('components/accessibility-toggle.html');
+        const html = await response.text();
+        document.getElementById('accessibility-placeholder').innerHTML = html;
+
+        // Initialize accessibility toggle functionality
+        initAccessibilityToggle();
+    } catch (error) {
+        console.error('Error loading accessibility toggle:', error);
+    }
+}
+
+// Initialize accessibility toggle functionality
+function initAccessibilityToggle() {
+    const toggleBtn = document.getElementById('accessibility-toggle');
+
+    if (toggleBtn) {
+        // Check for saved preference in localStorage
+        const savedMode = localStorage.getItem('textColorMode');
+        if (savedMode === 'black') {
+            document.body.classList.add('black-text-mode');
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('black-text-mode');
+
+            // Save preference to localStorage
+            if (document.body.classList.contains('black-text-mode')) {
+                localStorage.setItem('textColorMode', 'black');
+            } else {
+                localStorage.setItem('textColorMode', 'red');
+            }
+        });
+    }
+}
+
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
+    loadAccessibilityToggle();
 });

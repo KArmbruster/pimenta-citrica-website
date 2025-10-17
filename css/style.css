@@ -734,6 +734,83 @@ main {
     text-decoration: underline;
 }
 
+/* Accessibility Toggle Button */
+.accessibility-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    padding: 0;
+}
+
+.accessibility-btn:hover {
+    transform: translateY(-3px);
+}
+
+.accessibility-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+/* Black text mode for accessibility */
+body.black-text-mode {
+    color: #000000;
+}
+
+body.black-text-mode .hero-title,
+body.black-text-mode .page-title,
+body.black-text-mode .hero-text,
+body.black-text-mode .column,
+body.black-text-mode .column h3,
+body.black-text-mode .column p,
+body.black-text-mode .service-card h2,
+body.black-text-mode .about-text-container p,
+body.black-text-mode .content-text-container p,
+body.black-text-mode .press-text-container h2,
+body.black-text-mode .advocacy-content p,
+body.black-text-mode .workshop-list li,
+body.black-text-mode .testimonials cite,
+body.black-text-mode .story-tag,
+body.black-text-mode .form-group label,
+body.black-text-mode .intro-text,
+body.black-text-mode .resource-item h3,
+body.black-text-mode .coming-soon,
+body.black-text-mode .seen-on h3,
+body.black-text-mode .photo-credit {
+    color: #000000;
+}
+
+body.black-text-mode .nav-menu a,
+body.black-text-mode .press-list a,
+body.black-text-mode .article-list a,
+body.black-text-mode .blog-link,
+body.black-text-mode .email-link {
+    color: #000000;
+}
+
+body.black-text-mode .nav-menu a:hover,
+body.black-text-mode .nav-menu a.active,
+body.black-text-mode .press-list a:hover,
+body.black-text-mode .article-list a:hover,
+body.black-text-mode .blog-link:hover {
+    color: #333333;
+}
+
+body.black-text-mode .form-group input,
+body.black-text-mode .form-group textarea {
+    color: #000000;
+}
+
 /* Footer */
 footer {
     background-color: #FF0000;
