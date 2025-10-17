@@ -17,12 +17,21 @@ async function loadHeader() {
 
 // Set active class on current page's navigation link
 function setActiveNavLink() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    let currentPath = window.location.pathname;
+
+    // Normalize path - remove trailing slash and make sure it starts with /
+    if (currentPath === '/' || currentPath === '/index' || currentPath === '/index.html') {
+        currentPath = '/';
+    } else {
+        currentPath = currentPath.replace(/\/$/, ''); // Remove trailing slash
+        currentPath = currentPath.replace(/\.html$/, ''); // Remove .html extension
+    }
+
     const navLinks = document.querySelectorAll('.nav-menu a');
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentPage) {
+        if (href === currentPath) {
             link.classList.add('active');
         }
     });
