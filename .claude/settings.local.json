@@ -8,7 +8,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "WebFetch(domain:pimentacitrica.com)"
+      "WebFetch(domain:pimentacitrica.com)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "ask": []
