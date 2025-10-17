@@ -68,6 +68,23 @@ Common layout classes used throughout:
 - `.two-column`: Generic two-column layout
 - `.about-layout`, `.content-layout`, `.press-layout`: Page-specific two-column layouts
 
+### Responsive Image Pattern
+For images that need to maintain aspect ratio while fitting within their container at any screen size:
+```css
+.service-image img {
+    width: 100%;           /* Scale to container width */
+    max-width: 400px;      /* Cap maximum size */
+    aspect-ratio: 4 / 5;   /* Maintain aspect ratio (e.g., 400:500) */
+    object-fit: cover;     /* Fill space and crop nicely */
+}
+```
+
+This pattern ensures images:
+- Always fit within their container
+- Scale smoothly when window is resized
+- Maintain consistent proportions
+- Never overflow or break layout
+
 ### Image Assets
 All images are stored in `/images/` directory:
 - `Logo.png`: Site logo used in navigation
@@ -102,10 +119,15 @@ The Express server (`server.js`) is minimal:
 ## Responsive Design
 
 The site implements mobile-first responsive design:
-- **Desktop (>1024px)**: Full multi-column layouts, horizontal navigation
+- **Desktop (>1300px)**: Full multi-column layouts (3-column services grid), horizontal navigation
+- **Medium screens (1024-1300px)**: Services grid switches to 2 columns
 - **Tablet (768-1024px)**: Reduced columns, maintained horizontal nav
 - **Mobile (<768px)**: Single column layouts, hamburger menu navigation with expanded dropdown menu
 - **Small mobile (<480px)**: Compressed spacing and typography
+
+Services grid breakpoints:
+- 3 columns (default) → 2 columns at 1300px
+- 2 columns → 1 column at 768px
 
 Mobile navigation behavior:
 - Hamburger menu toggles with animated icon transformation
