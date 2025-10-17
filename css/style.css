@@ -316,6 +316,17 @@ main {
     line-height: 1.8;
 }
 
+.about-text-container a {
+    color: #FF0000;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.about-text-container a:hover {
+    color: #FF4444;
+}
+
 .about-image-container {
     position: relative;
 }
