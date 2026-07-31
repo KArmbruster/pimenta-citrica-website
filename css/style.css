@@ -20,13 +20,20 @@ main {
 }
 
 /* Navigation */
+/* The header is injected into #header-placeholder, so the placeholder — not the
+   navbar — has to be the sticky element. Sticking .navbar itself does nothing:
+   its containing block is the placeholder, which is exactly as tall as the
+   navbar, leaving no room to travel. */
+#header-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .navbar {
     background-color: #ACFFAD;
     padding: 1rem 2rem;
     border-bottom: 3px solid #FF0000;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .nav-container {
@@ -963,8 +970,13 @@ footer {
         z-index: 1000;
     }
 
+    /* The header is sticky, so the open drawer is pinned to the viewport too.
+       Cap it to the space below the header and let it scroll internally, or the
+       bottom nav items are unreachable on short screens. */
     .nav-wrapper.active {
-        max-height: 800px;
+        max-height: calc(100vh - 6rem);
+        max-height: calc(100dvh - 6rem);
+        overflow-y: auto;
         border-width: 3px;
     }
 
