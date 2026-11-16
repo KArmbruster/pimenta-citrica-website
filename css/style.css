@@ -182,6 +182,23 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     outline-offset: 3px;
 }
 
+/* Skip link: first stop for keyboard users, hidden until focused */
+.skip-link {
+    position: absolute;
+    left: var(--space-4);
+    top: -100px;
+    z-index: 3000;
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-ink);
+    color: var(--color-mint);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: var(--space-2);
+}
+
 /* Navigation */
 /* The header is injected into #header-placeholder, so the placeholder — not the
    navbar — has to be the sticky element. Sticking .navbar itself does nothing:
@@ -219,25 +236,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     height: 64px;
     width: auto;
     display: block;
-}
-
-.logo-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: var(--color-red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--color-red);
-}
-
-.logo-text {
-    color: var(--color-mint);
-    font-size: 9px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.2;
 }
 
 .nav-menu {
@@ -439,17 +437,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     display: block;
 }
 
-.image-placeholder {
-    width: 100%;
-    height: 500px;
-    background-color: var(--color-surface);
-    border: 3px solid var(--color-red);
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: var(--space-4);
-}
-
 .photo-credit {
     position: absolute;
     bottom: 8px;
@@ -500,6 +487,12 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
 .about-text-container p {
     font-size: var(--text-base);
     line-height: var(--leading-body);
+}
+
+/* Space between consecutive paragraphs in the text columns */
+.about-text-container p + p,
+.content-text-container p + p {
+    margin-top: var(--space-4);
 }
 
 .about-image-container {
@@ -556,11 +549,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     object-fit: cover;
 }
 
-.service-image .image-placeholder {
-    height: 300px;
-    margin-bottom: var(--space-4);
-}
-
 .service-card h2 {
     font-size: var(--text-xl);
     margin-top: var(--space-4);
@@ -593,7 +581,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     line-height: var(--leading-body);
 }
 
-/* Workshop List */
 /* Testimonials */
 .testimonials {
     columns: 2;
@@ -665,21 +652,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     align-items: center;
     justify-content: space-between;
     gap: var(--space-6);
-}
-
-/* Advocacy Content */
-.advocacy-content img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-    margin: 0 auto var(--space-8) auto;
-}
-
-.advocacy-content p {
-    font-size: var(--text-base);
-    line-height: var(--leading-body);
-    margin-bottom: var(--space-6);
 }
 
 /* Content Creation */
@@ -794,7 +766,7 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     border-top: 3px solid var(--color-red);
 }
 
-.resource-item h3 {
+.resource-item h2 {
     font-size: var(--text-lg);
 }
 
@@ -805,10 +777,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
 }
 
 /* Press Page */
-.press-image {
-    height: 400px;
-}
-
 .press-image-container {
     position: relative;
 }
@@ -860,10 +828,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     letter-spacing: 0.05em;
     line-height: 1.4;
     text-align: center;
-}
-
-.press-links {
-    margin-top: var(--space-8);
 }
 
 /* Blog Page */
@@ -934,13 +898,6 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
 .form-group input:focus,
 .form-group textarea:focus {
     background-color: var(--color-field-focus);
-}
-
-.contact-email {
-    text-align: center;
-    padding: var(--space-8);
-    background-color: var(--color-surface);
-    border: 2px solid var(--color-red);
 }
 
 /* Accessibility Toggle Button */
