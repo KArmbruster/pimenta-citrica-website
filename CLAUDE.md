@@ -94,6 +94,8 @@ This pattern ensures images:
 
 ### Image Assets
 All images are stored in `/images/` directory:
+- Page photos are WebP, at most 1200px wide (`about.webp`, `index.webp`, `work-with-me-*.webp`, ...). Convert new photos the same way and give the `<img>` its `width` and `height`
+- `og-image.jpg`: 1200x630 share image referenced by every page's Open Graph and Twitter tags
 - `Logo.png`: Site logo used in navigation
 - Social media icons: `ig.png`, `tiktok.png`, `X-Logo.png`, `youtube-logo-hd-8.png`, `linkedin.png`
 - Media outlet logos for "Seen On" section
