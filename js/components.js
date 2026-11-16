@@ -33,6 +33,13 @@ function setActiveNavLink() {
         const href = link.getAttribute('href');
         if (href === currentPath) {
             link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+
+            // A page inside the dropdown also highlights its parent item
+            const parentToggle = link.closest('.dropdown')?.querySelector('.dropdown-toggle');
+            if (parentToggle) {
+                parentToggle.classList.add('active');
+            }
         }
     });
 }
@@ -44,26 +51,53 @@ function initMobileMenu() {
     const navLinks = document.querySelectorAll('.nav-menu a');
 
     if (menuToggle && navWrapper) {
+        const setOpen = (open) => {
+            menuToggle.classList.toggle('active', open);
+            navWrapper.classList.toggle('active', open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+        };
+
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navWrapper.classList.toggle('active');
+            setOpen(!navWrapper.classList.contains('active'));
         });
 
         // Close menu when clicking on a link
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navWrapper.classList.remove('active');
-            });
+            link.addEventListener('click', () => setOpen(false));
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!menuToggle.contains(e.target) && !navWrapper.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                navWrapper.classList.remove('active');
+                setOpen(false);
             }
         });
+
+        // Close menu with Escape and return focus to the button
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navWrapper.classList.contains('active')) {
+                setOpen(false);
+                menuToggle.focus();
+            }
+        });
+    }
+}
+
+// Load footer component
+async function loadFooter() {
+    const placeholder = document.getElementById('footer-placeholder');
+    if (!placeholder) return;
+
+    try {
+        const response = await fetch('components/footer.html');
+        placeholder.innerHTML = await response.text();
+
+        const year = document.getElementById('footer-year');
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+    } catch (error) {
+        console.error('Error loading footer:', error);
     }
 }
 
@@ -108,5 +142,6 @@ function initAccessibilityToggle() {
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
+    loadFooter();
     loadAccessibilityToggle();
 });

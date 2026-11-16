@@ -25,6 +25,7 @@ npm install
 The site uses a simple JavaScript-based component loading system (not a framework):
 
 - **Header component**: Located at `components/header.html`, loaded dynamically via `js/components.js`
+- **Footer component**: Located at `components/footer.html`, injected into `<footer id="footer-placeholder">` by `loadFooter()`, which also sets the copyright year
 - **Dynamic loading**: The `loadHeader()` function fetches and injects the header HTML into placeholder divs on each page
 - **Active navigation**: `setActiveNavLink()` automatically highlights the current page in navigation based on URL pathname
 - **Mobile menu**: Responsive hamburger menu with toggle functionality initialized by `initMobileMenu()`
@@ -44,11 +45,16 @@ Each HTML page follows this pattern:
 5. Footer section
 
 ### Styling System
-The site uses a distinctive color scheme defined in `css/style.css`:
-- **Primary background**: `#ACFFAD` (bright green)
-- **Primary text/accent**: `#FF0000` (red)
-- **Hover state**: `#FF4444` (lighter red)
-- **Secondary background**: `rgba(255, 255, 255, 0.3)` (semi-transparent white)
+All colours, type sizes and spacing steps are CSS variables in the `:root` block at the top of `css/style.css`. Use the variables, not literal values:
+- **Primary background**: `--color-mint` `#ACFFAD` (bright green)
+- **Brand accent**: `--color-red` `#FF0000` for headings, nav, links, buttons and borders (`--color-accent-text` for text)
+- **Body text**: `--color-ink` `#4A0A0A` (via `--color-text`) for paragraphs, lists and form input; red body text fails contrast on mint
+- **Button hover**: `--color-red-hover` `#FF4444`
+- **Secondary background**: `--color-surface` (semi-transparent white)
+- **Font**: Bricolage Grotesque, self-hosted in `fonts/`, set through `--font-display` and `--font-body`
+- **Type scale**: `--text-xs` to `--text-3xl`; the three largest are fluid, so do not add per-breakpoint heading sizes
+
+The black-text accessibility mode (`body.black-text-mode`) works by overriding the text colour variables.
 
 CSS organization:
 - Reset and base styles at the top
@@ -57,8 +63,9 @@ CSS organization:
 - Responsive design with breakpoints at 1024px, 768px, and 480px
 
 Hover effect patterns:
-- **Buttons** (`.download-btn`, `.submit-btn`): `translateY(-3px)` with color change from `#FF0000` to `#FF4444`
-- **Text links** (`.press-list a`, `.article-list a`, `.blog-link`): Permanent underline with color change to `#FF4444` on hover
+- **Buttons** (`.btn`, `.download-btn`, `.submit-btn` share one rule): `translateY(-3px)` with color change from `#FF0000` to `#FF4444`
+- **Text links** (every link inside `main`, one shared rule): Permanent underline, darkening to the ink colour on hover
+- **Navigation**: solid underline on hover and on the current page
 
 ### Layout Patterns
 Common layout classes used throughout:
@@ -121,8 +128,9 @@ The Express server (`server.js`) is minimal:
 The site implements mobile-first responsive design:
 - **Desktop (>1300px)**: Full multi-column layouts (3-column services grid), horizontal navigation
 - **Medium screens (1024-1300px)**: Services grid switches to 2 columns
-- **Tablet (768-1024px)**: Reduced columns, maintained horizontal nav
-- **Mobile (<768px)**: Single column layouts, hamburger menu navigation with expanded dropdown menu
+- **Below 1200px**: hamburger menu navigation with expanded dropdown menu (the full menu does not fit on one row below this width)
+- **Tablet (768-1024px)**: Reduced columns
+- **Mobile (<768px)**: Single column layouts
 - **Small mobile (<480px)**: Compressed spacing and typography
 
 Services grid breakpoints:
