@@ -139,8 +139,51 @@ function initAccessibilityToggle() {
     }
 }
 
+// Send the contact form in place and show the result on the page.
+// Without JavaScript the form still posts to Formspree the normal way.
+function initContactForm() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+
+    const status = form.querySelector('.form-status');
+    const button = form.querySelector('button[type="submit"]');
+
+    const showStatus = (message, isError) => {
+        status.textContent = message;
+        status.classList.toggle('error', isError);
+        status.hidden = false;
+    };
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const label = button.textContent;
+        button.disabled = true;
+        button.textContent = 'SENDING…';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            });
+            if (!response.ok) throw new Error(`Form service responded ${response.status}`);
+
+            form.reset();
+            showStatus('Thank you! Your message is on its way.', false);
+        } catch (error) {
+            console.error('Error sending contact form:', error);
+            showStatus('Something went wrong and your message was not sent. Please try again.', true);
+        } finally {
+            button.disabled = false;
+            button.textContent = label;
+        }
+    });
+}
+
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    initContactForm();
     loadHeader();
     loadFooter();
     loadAccessibilityToggle();
