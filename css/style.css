@@ -817,6 +817,14 @@ main a:where(:not(.btn, .download-btn, .service-card)):hover {
     text-decoration-thickness: 2px;
 }
 
+/* The press list used flag images before the text tags. A browser holding an
+   older cached copy of the page still requests them, so keep them small. */
+.language-flag {
+    height: 1rem;
+    width: auto;
+    flex-shrink: 0;
+}
+
 .lang-tag {
     flex-shrink: 0;
     width: 2.6em;
