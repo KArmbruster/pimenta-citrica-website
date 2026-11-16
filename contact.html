@@ -9,25 +9,30 @@
     <meta property="og:url" content="https://pimentacitrica.com/contact">
     <meta property="og:title" content="Contact - Pimenta Cítrica">
     <meta property="og:description" content="Get in touch for workshops, content creation, speaking engagements, or collaboration opportunities.">
-    <meta property="og:image" content="https://pimentacitrica.com/images/Logo.png">
+    <meta property="og:image" content="https://pimentacitrica.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://pimentacitrica.com/contact">
     <meta property="twitter:title" content="Contact - Pimenta Cítrica">
     <meta property="twitter:description" content="Get in touch for workshops, content creation, speaking engagements, or collaboration opportunities.">
-    <meta property="twitter:image" content="https://pimentacitrica.com/images/Logo.png">
+    <meta property="twitter:image" content="https://pimentacitrica.com/images/og-image.jpg">
     <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/components.js"></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <div id="header-placeholder"></div>
     <div id="accessibility-placeholder"></div>
 
-    <main class="page-content">
+    <main id="main" class="page-content">
         <div class="content-container">
-            <h1 class="page-title">DON'T BE SHY, SEND SOME LOVE</h1>
-
             <div class="contact-content">
+                <h1 class="page-title">DON'T BE SHY, SEND SOME LOVE</h1>
+                <p class="lead">Workshops, collaborations, press requests or just a hello: tell me what you have in mind.</p>
+
                 <div class="contact-form-wrapper">
                     <form class="contact-form" action="https://formspree.io/f/mzzjolww" method="POST">
                         <div class="form-group">
@@ -49,14 +54,13 @@
                         <input type="text" name="_gotcha" style="display:none">
 
                         <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                        <p class="form-status" role="status" aria-live="polite" hidden></p>
                     </form>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Pimenta Cítrica. All rights reserved.</p>
-    </footer>
+    <footer id="footer-placeholder"></footer>
 </body>
 </html>
